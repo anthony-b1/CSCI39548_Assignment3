@@ -19,12 +19,21 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    let tbl = document.getElementById("grid");
+    if (tbl.rows.length == 0){                  // If there is no existing cells:
+        let row = tbl.insertRow();              // Insert a row 
+        row.insertCell(0);                      // And a cell
+    }
+    else{
+        for (let i = 0; i < tbl.rows.length; i++) {                         // Check the number of rows 
+            tbl.rows[i].insertCell(tbl.rows[i].cells.length);  // Make a column with the length equal to the number of rows 
+        }
+    }
 }
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    document.getElementById("grid").deleteRow(0);   // Remove row at index 0
 }
 
 // Remove a column

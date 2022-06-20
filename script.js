@@ -86,11 +86,11 @@ function fillU(){
 function fillAll(){
     colorSelected = document.getElementById("selectedColorId").value;
     let tbl = document.getElementById('grid');
-    tbl.querySelectorAll('td').forEach(td => td.style.backgroundColor = colorSelected);
+    tbl.querySelectorAll('td').forEach(td => td.style.backgroundColor = colorSelected); // For each <td> tag change the color 
 }
 
 // Clear all cells
 function clearAll(){
     let parent = document.getElementById('grid');
-    parent.replaceChildren();
+    parent.replaceChildren();                       // Empty the DOM element
 }

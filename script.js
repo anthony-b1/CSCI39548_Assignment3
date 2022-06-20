@@ -84,7 +84,9 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    colorSelected = document.getElementById("selectedColorId").value;
+    let tbl = document.getElementById('grid');
+    tbl.querySelectorAll('td').forEach(td => td.style.backgroundColor = colorSelected);
 }
 
 // Clear all cells

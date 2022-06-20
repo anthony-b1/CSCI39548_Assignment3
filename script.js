@@ -53,12 +53,33 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
-    console.log(colorSelected);
+    let tbl = document.getElementById('grid');
+    let tr = tbl.getElementsByTagName("tr");
+    var td = null;
+    for (var i = 0; i < tr.length; i++){        // Get the number of <tr> tags
+        td = tr[i].getElementsByTagName("td");
+        for (var n = 0; n < td.length; n++){    // Get the number of <td> tags
+            td[n].addEventListener('click', function onclick(event){    // Change background color of the cell 
+                event.target.style.backgroundColor = colorSelected;
+            });
+        }
+    }
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    colorSelected = document.getElementById("selectedColorId").value;
+    let tbl = document.getElementById('grid');
+    let tr = tbl.getElementsByTagName("tr");
+    var td = null;
+    for (var i = 0; i < tr.length; i++){        // Get the number of <tr> tags
+        td = tr[i].getElementsByTagName("td");
+        for (var n = 0; n < td.length; n++){    // Get the number of <td> tags
+            if (td[n].style.backgroundColor == false){          // If cell has not color:
+                td[n].style.backgroundColor = colorSelected;    // Color the cell
+            }
+        }
+    }
 }
 
 // Fill all cells

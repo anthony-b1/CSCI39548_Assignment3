@@ -15,7 +15,8 @@ function addR() {
             row.insertCell(i);                                  // And make the same number of cells in a new row 
         }
     }
-}
+    document.getElementById("selectedColorId").value = "SELECT";    // Fixing the issue where selected color can't
+}                                                                   // be placed when a new row is added
 
 // Add a column
 function addC() {
@@ -29,7 +30,8 @@ function addC() {
             tbl.rows[i].insertCell(tbl.rows[i].cells.length);  // Make a column with the length equal to the number of rows 
         }
     }
-}
+    document.getElementById("selectedColorId").value = "SELECT";    // Fixing the issue where selected color can't
+}                                                                   // be placed when a new col is added
 
 // Remove a row
 function removeR() {

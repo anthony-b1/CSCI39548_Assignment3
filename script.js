@@ -5,7 +5,16 @@ let colorSelected;
 
 // Add a row
 function addR() {
-    alert("Clicked Add Row"); // Replace this line with your code.
+    let tbl = document.getElementById('grid'); // table reference
+    let row = tbl.insertRow(tbl.rows.length)
+    if (tbl.rows[0].cells.length == 0){           // If there is no existing cells, insert one cell
+        row.insertCell(0);
+    }
+    else {
+        for (let i = 0; i < tbl.rows[0].cells.length; i++) {    // Check the number of columns on the first row 
+            row.insertCell(i);                                  // And make the same number of cells in a new row 
+        }
+    }
 }
 
 // Add a column

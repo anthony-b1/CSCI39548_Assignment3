@@ -38,7 +38,16 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    let tbl = document.getElementById('grid');
+    let row = tbl.rows;                         // Getting the rows of the table
+    if (row[0].cells.length == 1){              // If there is one column left, clear all 
+        tbl.replaceChildren();
+    }
+    else {
+        for (let i = 0; i < row.length; i++){   // Delete ith cell of each row
+            row[i].deleteCell(0);
+        }
+    }
 }
 
 // Set global variable for selected color

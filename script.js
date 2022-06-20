@@ -33,7 +33,7 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    document.getElementById("grid").deleteRow(0);   // Remove row at index 0
 }
 
 // Remove a column
